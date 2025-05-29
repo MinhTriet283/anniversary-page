@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kỷ niệm 1 năm ngày cưới</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Dancing Script', cursive;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+      color: #6b1e3b;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 1.5rem;
+    }
+    .message {
+      font-size: 1.2rem;
+      margin: 1rem 2rem;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 1rem;
+    }
+    .gallery img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+    .video-container {
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 400px;
+    }
+    .love-letter {
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 500px;
+      background-color: #fff0f7;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: left;
+    }
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: fall 5s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Kỷ niệm 1 năm ngày cưới ❤️</h1>
+  <p class="message">Cảm ơn em đã đến bên anh và cùng anh đi qua một năm thật ngọt ngào. Mãi yêu em! 💖</p>
+
+  <div class="gallery">
+    <img src="z6649547643571_8f92710227f048c52f1cf2a73a215707.jpg" alt="Ảnh 1">
+    <img src="z6649547660420_98a58901a5f232d1bd10beba1d4a890e.jpg" alt="Ảnh 2">
+    <img src="z6649547660954_c8e3e4d452c17474872edeb8aa6c0df7.jpg" alt="Ảnh 3">
+  </div>
+
+  <div class="video-container">
+    <video controls width="100%">
+      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      Trình duyệt của bạn không hỗ trợ video.
+    </video>
+  </div>
+
+  <div class="love-letter">
+    <strong>💌 Gửi em – người vợ tuyệt vời của anh,</strong>
+    <p>Vậy là đã tròn một năm kể từ ngày chúng ta chính thức về chung một nhà. Một năm không dài, nhưng đủ để anh hiểu rằng: cưới em là quyết định đúng đắn và hạnh phúc nhất cuộc đời anh.</p>
+    <p>Cảm ơn em vì đã luôn dịu dàng, bao dung và kiên nhẫn cùng anh vượt qua mọi thử thách. Cảm ơn vì từng nụ cười, từng cái ôm, từng khoảnh khắc nhỏ bé nhưng đầy yêu thương mà em đã mang đến.</p>
+    <p>Một năm qua chỉ là khởi đầu, anh mong sẽ được nắm tay em đi hết cả cuộc đời.</p>
+    <p>Mãi yêu em ❤️<br><em>Chồng của em</em></p>
+  </div>
+
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+    Trình duyệt không hỗ trợ nhạc nền.
+  </audio>
+
+  <div class="hearts"></div>
+  <script>
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+      document.querySelector('.hearts').appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }, 300);
+  </script>
+</body>
+</html>
